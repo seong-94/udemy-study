@@ -15,7 +15,7 @@ function App() {
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue, // + 추가함으로써 string 을 number 값으로 더하기 가 가능하다함
       };
     });
   }
@@ -25,7 +25,7 @@ function App() {
       {/* <h1 >React Investment Calculator</h1> */}
       <Header />
       <UserInput onChangeInput={handleChange} userInput={userInput} />
-      <Results userInput={userInput} />
+      <Results input={userInput} />
     </>
   );
 }
